@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { environment } from 'src/environments/environment.prod';
 import { Products } from '../model/products';
 
 const httpOptions = {
@@ -14,8 +15,8 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ProductsService {
-  url = "https://spring-kopi.herokuapp.com/";
-  apiServerUrl = "https://spring-kopi.herokuapp.com/";
+  url = environment.baseUrl;
+  apiServerUrl = environment.baseUrl;
   public dataForm:  FormGroup; 
 
   constructor(private http: HttpClient) { }

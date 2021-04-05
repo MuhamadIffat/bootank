@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { environment } from 'src/environments/environment.prod';
 import { Category } from '../model/category';
 
 const httpOptions = {
@@ -13,8 +14,8 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class CategoryService {
-  url = "https://spring-kopi.herokuapp.com/";
-  apiServerUrl = "https://spring-kopi.herokuapp.com/";
+  url = environment.baseUrl;
+  apiServerUrl = environment.baseUrl;
 
   constructor(private http: HttpClient) { }
 

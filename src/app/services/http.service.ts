@@ -6,6 +6,7 @@ import { map, filter, scan,catchError,tap } from 'rxjs/operators';
 import { User } from '../model/user';
 import { Order } from '../model/order';
 import { Json } from '../shared/json';
+import { environment } from 'src/environments/environment.prod';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -18,8 +19,8 @@ const httpOptions = {
 })
 export class HttpService {
 
-  url = "https://spring-kopi.herokuapp.com/";
-  apiServerUrl = "https://spring-kopi.herokuapp.com/";
+  url = environment.baseUrl;
+  apiServerUrl = environment.baseUrl;
 
   constructor(private http: HttpClient) { }
 
